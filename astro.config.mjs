@@ -123,11 +123,6 @@ export default defineConfig({
 					attrs: { target: '_blank', rel: 'noopener' },
 				},
 				{
-					label: '💻 İşletim Sistemleri ve Sistem Programlama Kitabı ↗',
-					link: 'https://ytalharabaci.github.io/isletim-sistemleri-ve-sistem-programlama/',
-					attrs: { target: '_blank', rel: 'noopener' },
-				},
-				{
 					label: '01. Kriptolojinin Temelleri ve Matematiksel Altyapı',
 					collapsed: true,
 					items: [{ autogenerate: { directory: '01-kriptolojinin-temelleri-ve-matematiksel-altyapi' } }],
