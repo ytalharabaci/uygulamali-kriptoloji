@@ -1,4 +1,4 @@
-# Uygulamalı Kriptoloji ve Kriptanaliz
+# Uygulamalı Kriptoloji
 
 Modern kriptografinin matematiksel çekirdeğini, Python & Go pratiklerini ve zafiyet/kriptanaliz senaryolarını birleştiren açık kaynak Türkçe web kitabı.
 

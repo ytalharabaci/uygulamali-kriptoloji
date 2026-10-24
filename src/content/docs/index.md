@@ -1,5 +1,5 @@
 ---
-title: "Uygulamalı Kriptoloji ve Kriptanaliz"
+title: "Uygulamalı Kriptoloji"
 description: "Soyut formüllere boğulmadan algoritmaların matematiksel çekirdeğini, Python & Go pratiklerini ve kriptanaliz senaryolarını birleştiren açık kaynak Türkçe web kitabı."
 template: splash
 hero:
