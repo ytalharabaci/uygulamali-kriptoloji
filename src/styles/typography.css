@@ -1,0 +1,98 @@
+/* ===================================================================
+   TYPOGRAPHY
+   How text looks and scales, independent of where it sits on the
+   page. Layout chrome lives in layout.css; breakpoint-only layout
+   reflow (grid stacking etc.) lives in responsive.css.
+
+   Headings use clamp() instead of a fixed rem size so they scale
+   continuously between phone and desktop widths, matching the fluid
+   scale Starlight itself uses for --sl-text-h1..h6.
+   =================================================================== */
+
+body {
+	line-height: 1.8;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden; /* guard against any wide element forcing page scroll */
+}
+
+/* The markdown body repeats the page title as its own first H1, but
+   Starlight already renders that title separately — hide the dupe. */
+.sl-markdown-content h1:first-of-type {
+	display: none !important;
+}
+
+/* Starlight's own page-title H1. Scales ~32px (phone) -> 56px (desktop). */
+h1 {
+	font-family: var(--sl-font-heading);
+	font-weight: 800;
+	font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem) !important;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	margin-bottom: var(--book-space-subsection) !important;
+}
+
+/* Gradient text reuses the same two tokens (--sl-color-white,
+   --sl-color-accent) that define the rest of each theme, so the
+   gradient stays in sync if the palette in tokens.css ever changes —
+   no hex codes duplicated here. */
+h1 {
+	color: var(--sl-color-white) !important;
+	background: linear-gradient(135deg, var(--sl-color-white) 0%, var(--sl-color-accent) 100%) !important;
+	-webkit-background-clip: text !important;
+	background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
+/* Chapter headings: fluid size + fluid top margin, so long chapters
+   don't burn half a phone screen on whitespace between sections. */
+.sl-markdown-content h2 {
+	font-family: var(--sl-font-heading);
+	font-weight: 700;
+	font-size: clamp(1.5rem, 1.1rem + 2.2vw, 2.2rem);
+	margin-top: var(--book-space-section);
+	margin-bottom: 1.5rem;
+	color: var(--sl-color-white) !important;
+}
+
+/* "§6.1.2." / "13.2" kicker label: a small muted number shown above
+   a title instead of inline at full size (networksciencebook.com's
+   "Section 1.4" treatment). Split out of H2 text at build time by
+   the rehype-section-number plugin, and out of sidebar link labels
+   at runtime by the script in astro.config.mjs (sidebar links aren't
+   markdown, so a rehype plugin can't reach them) — both reuse this
+   one class so the two contexts stay visually consistent. */
+.chapter-num {
+	display: block;
+	font-family: var(--sl-font-heading);
+	font-weight: 500;
+	font-size: 0.85rem;
+	letter-spacing: 0.02em;
+	color: var(--sl-color-gray-3) !important;
+	margin-bottom: 0.35rem;
+}
+
+/* Sidebar links are already small (--sl-text-sm) and tightly packed;
+   scale the kicker down to match instead of using the H2 size. */
+.sidebar-content .chapter-num {
+	font-size: 0.7rem;
+	margin-bottom: 0.15rem;
+	color: var(--sl-color-gray-4) !important;
+}
+
+.sl-markdown-content h3 {
+	font-family: var(--sl-font-heading);
+	font-weight: 600;
+	font-size: clamp(1.25rem, 1rem + 1.4vw, 1.6rem);
+	margin-top: var(--book-space-subsection);
+	color: var(--sl-color-accent) !important;
+}
+
+/* Body copy: comfortable for long-form reading; eases off slightly
+   on narrow phones where long Turkish compound words wrap more. */
+.sl-markdown-content {
+	font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+	line-height: 1.9;
+	color: var(--sl-color-text);
+	max-width: 100% !important;
+}
+

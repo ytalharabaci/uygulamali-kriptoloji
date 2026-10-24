@@ -1,0 +1,30 @@
+# Editor & OS files
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build artifacts
+build/
+dist/
+*.zip
+*.tar.gz
+
+# Astro
+node_modules/
+.astro/
+
+# Archive
+_archive/
+
+# Scripts & Data
+.data/
+

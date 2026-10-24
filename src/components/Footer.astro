@@ -1,0 +1,74 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<div class="companion-book-banner">
+	<div class="companion-book-card">
+		<span class="companion-badge">Kardeş Kitap</span>
+		<p class="companion-title">🛡️ Siber Güvenlik Operasyonları</p>
+		<p class="companion-desc">SOC, Tehdit Avcılığı, DFIR ve Güvenlik Mühendisliği Rehberi</p>
+		<a href="https://ytalharabaci.github.io/siber-guvenlik-operasyonlari/" class="companion-link" target="_blank" rel="noopener">Kitabı İncele →</a>
+	</div>
+	<div class="companion-book-card">
+		<span class="companion-badge">Kardeş Kitap</span>
+		<p class="companion-title">🌐 Ağ Yönetimi ve Güvenliği</p>
+		<p class="companion-desc">Kurumsal Ağ Mimarisi, Protokoller, Paket Analizi ve Savunma</p>
+		<a href="https://ytalharabaci.github.io/ag-yonetimi-ve-guvenligi/" class="companion-link" target="_blank" rel="noopener">Kitabı İncele →</a>
+	</div>
+	<div class="companion-book-card">
+		<span class="companion-badge">Kardeş Kitap</span>
+		<p class="companion-title">💻 İşletim Sistemleri ve Sistem Programlama</p>
+		<p class="companion-desc">Donanım Tarihçesi, C & x86 Assembly, Çekirdek ve Windows Mimarisi</p>
+		<a href="https://ytalharabaci.github.io/isletim-sistemleri-ve-sistem-programlama/" class="companion-link" target="_blank" rel="noopener">Kitabı İncele →</a>
+	</div>
+</div>
+
+<Default><slot /></Default>
+
+<style>
+	.companion-book-banner {
+		margin: 3rem 0 2rem;
+		padding: 1.5rem;
+		background: var(--sl-color-gray-6, rgba(255, 255, 255, 0.03));
+		border: 1px solid var(--sl-color-gray-5, rgba(255, 255, 255, 0.1));
+		border-radius: 12px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.25rem;
+	}
+	.companion-book-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+	.companion-badge {
+		font-size: 0.72rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--sl-color-accent, #6366f1);
+		font-weight: 700;
+	}
+	.companion-title {
+		margin: 0;
+		font-weight: 700;
+		font-size: 0.98rem;
+		color: var(--sl-color-white, #fff);
+	}
+	.companion-desc {
+		margin: 0;
+		font-size: 0.82rem;
+		color: var(--sl-color-gray-3, #94a3b8);
+		line-height: 1.4;
+	}
+	.companion-link {
+		margin-top: 0.4rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--sl-color-accent, #818cf8);
+		text-decoration: none;
+		align-self: flex-start;
+	}
+	.companion-link:hover {
+		text-decoration: underline;
+	}
+</style>

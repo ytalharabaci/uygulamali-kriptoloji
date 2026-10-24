@@ -1,0 +1,21 @@
+{
+  "name": "uygulamali-kriptoloji",
+  "version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.2",
+    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/starlight": "^0.42.6",
+    "astro": "^7.3.8",
+    "astro-mermaid": "^2.1.0",
+    "mermaid": "^11.15.0",
+    "unist-util-visit": "^5.0.0"
+  }
+}
