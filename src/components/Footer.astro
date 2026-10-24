@@ -11,6 +11,12 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 	<a href="https://ytalharabaci.github.io/ag-yonetimi-ve-guvenligi/" class="companion-link" target="_blank" rel="noopener">🌐 Ağ Yönetimi ve Güvenliği</a>
 </div>
 
+<p class="license">
+	© 2026 Yusuf Talha ARABACI. Bu eser
+	<a href="https://creativecommons.org/licenses/by/4.0/deed.tr" rel="license">CC BY 4.0</a>
+	lisansı ile lisanslanmıştır; atıf yapılarak serbestçe kullanılabilir ve paylaşılabilir.
+</p>
+
 <style>
 	.companion-bar {
 		margin-top: 1.5rem;
@@ -39,5 +45,16 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 	}
 	.companion-dot {
 		opacity: 0.4;
+	}
+	.license {
+		margin-top: 1rem;
+		font-size: 0.8125rem;
+		color: var(--sl-color-gray-3, #94a3b8);
+		text-align: center;
+		line-height: 1.5;
+	}
+	.license a {
+		color: var(--sl-color-gray-2, #cbd5e1);
+		text-decoration: underline;
 	}
 </style>
