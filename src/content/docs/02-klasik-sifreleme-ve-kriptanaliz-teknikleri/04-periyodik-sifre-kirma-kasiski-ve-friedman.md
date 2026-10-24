@@ -102,3 +102,4 @@ estimate_key_length(cipher_sample, max_len=10)
 > Vigenère şifrelemesinde açık metnin sadece birkaç harfi (örneğin belgenin başındaki *"Sayın Yetkili"* veya *"HTTP/1.1"*) biliniyorsa; anahtar doğrudan şu formülle çıkarılır:
 > $$K_i \equiv (C_i - P_i) \pmod{26}$$
 > Anahtarın birkaç harfi ele geçirildiğinde, kelimenin tamamı sözlük saldırısıyla tamamlanır ve belgenin kalanı anında deşifre olur.
+

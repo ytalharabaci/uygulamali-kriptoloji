@@ -139,3 +139,4 @@ print(f"[✓] Dolgusu Temizlenmiş Metin: {cracked[:-cracked[-1]].decode()}")
 > Padding Oracle saldırısını önlemenin yolu hata mesajlarını gizlemek veya zamanlama farklarını eşitlemek değildir (zamanlama yan kanalları yine de sızdırır). 
 > **Kesin Çözüm:** Deşifre işlemine başlamadan önce şifreli metnin bütünlüğünü doğrulamaktır (*Encrypt-then-MAC*). 
 > Eğer veri manipüle edilmişse deşifre fonksiyonu ve dolgu açma mantığı asla çalıştırılmamalıdır. Modern standart **AES-GCM** veya **ChaCha20-Poly1305 (AEAD)** kullanıldığında bu saldırı sınıfı kökten imkansız hale gelir.
+

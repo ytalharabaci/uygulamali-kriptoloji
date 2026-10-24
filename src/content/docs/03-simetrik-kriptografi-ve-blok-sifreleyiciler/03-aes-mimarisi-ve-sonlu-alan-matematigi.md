@@ -93,3 +93,4 @@ assert mul2 == 0xAE and mul3 == 0xF9
 > [!NOTE]
 > **Neden Son Turda MixColumns Yoktur?**
 > Deşifreleme işleminin şifreleme algoritmasıyla tamamen aynı mimari yapıda (*Equivalent Inverse Cipher*) yürütülebilmesi için AES tasarımcıları son turdaki MixColumns adımını kasten çıkarmıştır. Bu sayede donanım tasarımcıları aynı mantık kapılarını hem şifreleme hem de deşifreleme için minimum silikon alanıyla kullanabilmektedir.
+

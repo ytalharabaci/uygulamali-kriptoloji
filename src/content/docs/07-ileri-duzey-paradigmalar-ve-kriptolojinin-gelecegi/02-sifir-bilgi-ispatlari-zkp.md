@@ -104,3 +104,4 @@ assert left_side == right_side
 > **Güvenilir Kurulum (Trusted Setup) Toksik Atıkları**
 > İlk nesil zk-SNARK sistemleri (örneğin Groth16), sistemin başlangıcında ortak referans dizisi (*CRS*) oluşturmak için tek seferlik gizli parametreler üretilmesini gerektirir. 
 > Bu gizli parametreler kurulumdan sonra imha edilmezse (**"Toksik Atık - Toxic Waste"**), anahtarları elinde tutan kişi sahte ispatlar üreterek sistemi çökertebilir. Modern araştırmalar bu riski taşımayan **STARKs, Bulletproofs ve Halo2** mimarilerine yönelmiştir.
+

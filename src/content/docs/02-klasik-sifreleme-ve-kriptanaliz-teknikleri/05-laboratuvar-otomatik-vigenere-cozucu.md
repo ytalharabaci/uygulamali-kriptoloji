@@ -147,3 +147,4 @@ if __name__ == "__main__":
 > [!NOTE]
 > **Metin Uzunluğu Faktörü**
 > İstatistiksel kırma tekniklerinin başarısı şifreli metnin uzunluğu ile doğru orantılıdır. Çok kısa metinlerde (örneğin 20-30 karakter) frekans dağılımı henüz oturmadığı için Ki-kare yanlış sonuçlar verebilir. Modern kriptolojide şifre bloklarının boyutları (AES: 128 bit = 16 bayt) ve anahtar boyutları (256 bit), saldırganın istatistik toplamasını engelleyecek matematiksel sınırların çok üzerinde seçilir.
+

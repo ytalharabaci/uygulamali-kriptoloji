@@ -34,3 +34,4 @@ npm run build
 ## Lisans
 
 Bu çalışma [CC-BY-4.0](LICENSE) ile lisanslanmıştır.
+

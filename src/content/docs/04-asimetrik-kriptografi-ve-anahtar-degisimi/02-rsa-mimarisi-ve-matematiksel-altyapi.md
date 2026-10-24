@@ -107,3 +107,4 @@ func main() {
 > **Bleichenbacher'ın Milyon Mesaj Saldırısı (PKCS#1 v1.5 Padding Oracle)**
 > Eski PKCS#1 v1.5 dolgu standardı, sunucunun şifre çözerken dolgu formatının hatalı olup olmadığını dışarı sızdırması durumunda (tıpkı CBC padding oracle gibi) saldırganın yüz binlerce uyarlanabilir şifreli metin (*chosen-ciphertext*) göndererek RSA gizli anahtarı olmadan açık metni tamamen çözmesine imkan verir. 
 > Bu nedenle tüm modern sistemlerde **PKCS#1 v1.5 şifreleme yasaklanmış**, yalnızca **OAEP** standart kılınmıştır.
+

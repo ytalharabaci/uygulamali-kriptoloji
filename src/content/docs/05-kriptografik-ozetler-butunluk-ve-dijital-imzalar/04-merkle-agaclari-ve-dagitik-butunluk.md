@@ -127,3 +127,4 @@ assert is_valid
 > Eğer ağaçta yaprak düğümler ile ara düğümler birbirinden ayırt edilmezse; $H(H_A \parallel H_B)$ düğümü aynı zamanda bir yaprak gibi gösterilerek sahte veri enjekte edilebilir. 
 > Güvenli sistemlerde (örneğin RFC 6962 CT logları) yapraklar özetlenirken başına `0x00` baytı, ara düğümler özetlenirken ise `0x01` baytı eklenerek (*Domain Separation*) bu saldırı engellenir:
 > $$H_{leaf} = H(0\text{x}00 \parallel data), \quad H_{node} = H(0\text{x}01 \parallel left \parallel right)$$
+

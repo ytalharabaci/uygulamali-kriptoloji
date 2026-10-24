@@ -103,3 +103,4 @@ func main() {
 > 2008 yılında bir Debian geliştiricisi, Valgrind bellek uyarılarını susturmak için OpenSSL'deki entropi toplayıcı döngüyü kaldırdı. Bunun sonucunda anahtar üretimindeki tek değişken işletim sisteminin o anki işlem numarası (PID) oldu ($0$ ile $32767$ arası). 
 > Dünya çapında üretilen milyonlarca SSH ve SSL anahtarının uzayı sadece 32.768 ihtimale düştü ve saldırganlar birkaç saniye içinde tüm açık anahtarların gizli karşılıklarını brute-force ile deşifre etti.
 > **Kural:** Asla kendi rastgelelik fonksiyonunuzu yazmayın, `math/rand` (Go) veya `random` (Python) gibi kütüphaneleri güvenlik anahtarlarında asla kullanmayın!
+

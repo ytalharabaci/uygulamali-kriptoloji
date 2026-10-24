@@ -76,3 +76,4 @@ openssl verify -CAfile rootCA.crt server.crt
 > **Sertifika Sabitleme (Certificate Pinning) Tehlikesi**
 > Geçmişte mobil uygulamalar MitM saldırılarını önlemek için sunucunun tam sertifikasını uygulama içine gömerdi (*Certificate Pinning*). Ancak sunucu sertifikası yenilendiğinde veya anahtar ifşa olduğunda güncellenemeyen mobil uygulamalar tamamen erişilemez hale gelmiştir. 
 > Modern standart; sertifikanın kendisini değil, Kök/Ara CA açık anahtar özetini sabitlemek (**HPKP yerine CT log takibi ve CAA kayıtları**) kullanmaktır.
+

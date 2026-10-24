@@ -126,3 +126,4 @@ func main() {
 > **AES-GCM'de Nonce Tekrarı Felaketi: The "Forbidden Attack"**
 > AES-GCM'de aynı anahtarla aynı Nonce değeri iki kez kullanılırsa; saldırgan basit bir sonlu alan cebiriyle ($GF(2^{128})$ üzerinde iki etiket arasındaki farkı çözerek) **gizli GHASH kimlik doğrulama anahtarını ($H$) tamamen elde eder**.
 > Bu anahtar ele geçirildiğinde saldırgan dilediği gibi sahte şifreli metinler ve geçerli etiketler üretebilir; sistemin tüm bütünlüğü çöker. Nonce yönetiminde sayaç kullanılmalı ya da **AES-GCM-SIV** (sentetik IV - Nonce misuse-resistant) tercih edilmelidir.
+

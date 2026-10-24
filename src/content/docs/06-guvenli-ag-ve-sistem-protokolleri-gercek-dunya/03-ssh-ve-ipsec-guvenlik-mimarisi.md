@@ -93,3 +93,4 @@ def secure_ssh_connect(host: str, username: str, key_path: str):
 > Geliştiriciler uzak sunucular üzerinden başka sunuculara zıplamak (*jump host*) için sıklıkla `ssh -A` (Agent Forwarding) özelliğini açar. 
 > Eğer ara sunucuda root yetkisine sahip kötü niyetli biri varsa, yerel makinenizdeki SSH-Agent UNIX soketine bağlanarak sizin gizli anahtarlarınızla dilediği sunucuya sizin adınıza oturum açabilir. 
 > **Güvenli Çözüm:** `ssh -A` yerine modern **ProxyJump (`ssh -J`)** direktifi kullanılmalıdır (anahtar asla ara sunucuya temas etmez).
+

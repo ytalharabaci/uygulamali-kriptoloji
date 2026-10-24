@@ -95,3 +95,4 @@ print("[✓] İdeal Çığ Etkisi Doğrulandı (~%50 bit değişimi)")
 > **Özet Fonksiyonlarını Parola Saklamak İçin Kullanmayın!**
 > SHA-256 veya SHA-3 donanımda ve GPU'larda son derece hızlı çalışmak üzere optimize edilmiştir (modern bir RTX 4090 saniyede on milyarlarca SHA-256 hesaplayabilir). 
 > Parola güvenliği için hızlı özet fonksiyonları değil; kaba kuvvet saldırılarını yavaşlatan, bellek-sert (*memory-hard*) **KDF (Argon2id, bcrypt, scrypt)** algoritmaları kullanılmalıdır (Bkz: Modül 6.5).
+

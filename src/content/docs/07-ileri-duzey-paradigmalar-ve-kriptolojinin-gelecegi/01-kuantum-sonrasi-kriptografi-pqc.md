@@ -95,3 +95,4 @@ print("[!] Gürültü eklendiğinde, boyut n=1024 olduğunda kuantum bilgisayarl
 > **"Şimdi Kaydet, Sonra Çöz" (Harvest Now, Decrypt Later - HNDL)**
 > İstihbarat servisleri ve tehdit aktörleri, bugünün şifreli diplomatik, askeri ve kurumsal ağ trafiğini devasa veri merkezlerinde sessizce arşivlemektedir. Kuantum bilgisayarlar operasyonel hale geldiğinde geriye dönük 10-20 yıllık tüm bu arşiv şifresiz okunacaktır.
 > Bu nedenle **PQC'ye geçiş geleceğin değil, bugünün acil güvenlik gereksinimidir**.
+

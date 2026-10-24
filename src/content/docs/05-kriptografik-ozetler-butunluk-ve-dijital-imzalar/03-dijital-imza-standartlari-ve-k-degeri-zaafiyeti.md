@@ -110,3 +110,4 @@ assert real_private_key == recovered_key
 > ECDSA'daki $k$ rastgelelik hatası riskini tamamen ortadan kaldırmak için iki modern standart geliştirilmiştir:
 > 1. **RFC 6979 (Deterministik ECDSA):** $k$ değeri bir CSPRNG'den rastgele çekilmez; gizli anahtarın ve mesaj özetinin HMAC'i alınarak deterministik olarak üretilir ($k = HMAC(d_A, H(m))$). Aynı mesaj her zaman aynı $k$'yı üretirken, farklı mesajlar kesinlikle farklı ve tahmin edilemez $k$ üretir.
 > 2. **Ed25519 (Twisted Edwards):** Doğal olarak deterministiktir, rastgelelik üretimine ihtiyaç duymaz ve yan kanal saldırılarına karşı tam korumalıdır. Günümüzde SSH, Tor ve Signal'in varsayılan imza standardıdır.
+

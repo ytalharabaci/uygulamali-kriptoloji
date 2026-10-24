@@ -102,3 +102,4 @@ print(f"    Yeni Hash   : {block_1.hash}")
 > **51% Saldırısı ve Kuantum Tehdidi**
 > * **%51 Saldırısı:** Ağdaki madencilik işlem gücünün yarısından fazlasını ele geçiren bir aktör, blokları gizlice geriden kazıp daha uzun bir zincir yayınlayarak kendi yaptığı ödemeleri geri alabilir (*Reorganize / Double-spend*).
 > * **Kuantum Tehdidi:** Blokzincir adresleri ilk para transferi yapılana kadar sadece açık anahtarın özetini (SHA-256 + RIPEMD-160) saklar ve kuantum bilgisayarlara karşı güvendedir. Ancak adresten bir kez harcama yapıldığında açık anahtar ağa yayınlanır ve Shor algoritması ile gizli anahtarın kırılma riski doğar. Bu nedenle Bitcoin topluluğu **Kuantum Sonrası Taproot / Lamport imzalarına** geçiş hazırlığı yapmaktadır.
+

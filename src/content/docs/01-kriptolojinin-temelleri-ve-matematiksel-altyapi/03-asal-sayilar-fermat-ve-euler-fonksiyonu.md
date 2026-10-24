@@ -114,3 +114,4 @@ print(f"[+] {candidate} asal mı? -> {miller_rabin(candidate)}")
 > **Güvenli Asal (Safe Prime) ve Küçük Alt Grup Saldırıları**
 > Diffie-Hellman için seçilen $p$ asalının çarpan yapısı kritik önemdedir. Eğer $p - 1$ değeri çok sayıda küçük asal çarpana ayrılıyorsa (smooth number), **Pohlig-Hellman** algoritması DLP'yi küçük alt gruplarda parçalayarak kırar.
 > Bu nedenle kriptografide $p = 2q + 1$ (burada $q$ da bir asaldır) biçimindeki **Güvenli Asallar** (*Safe Primes*) tercih edilir.
+

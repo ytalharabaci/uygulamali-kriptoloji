@@ -105,3 +105,4 @@ print("[✓] Bu anahtar artık Grover algoritmasına karşı AES-256 ile tam kor
 > Klasik Curve25519 el sıkışmasında açık anahtarlar sadece **32 bayt** yer kaplar. 
 > ML-KEM-768'e geçildiğinde paket boyutu **$\approx 1.1$ Kilobayt**a çıkar. Bu durum ağ anahtarlarında (MTU 1500 bayt) IP paketlerinin parçalanmasına (*fragmentation*) yol açabilir. 
 > Bu nedenle modern ağ mühendisleri, TCP/QUIC pencerelerini ve MTU boyutlarını PQC paket boyutlarını karşılayacak şekilde optimize etmelidir.
+

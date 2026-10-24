@@ -115,3 +115,4 @@ assert sonuc == (sayi1 + sayi2)
 > [!NOTE]
 > **Hesaplama ve Bellek Maliyeti Darboğazı**
 > FHE teorik olarak devrimsel olsa da, pratikte standart CPU'lara göre **$1.000$ ile $100.000$ kat daha yavaş** çalışır ve şifreli metin boyutları megabaytlarca şişer. Intel, AMD ve DARPA şu an donanım seviyesinde FHE hızlandırıcı çipler (ASIC) geliştirmektedir.
+

@@ -124,3 +124,4 @@ assert curve.is_on_curve(p5)
 > **Geçersiz Eğri Saldırısı (Invalid Curve Attack)**
 > Geleneksel Weierstrass eğrilerinde (örneğin NIST P-256), eğer yazılım karşı taraftan gelen açık anahtar koordinatlarının ($(x, y)$) gerçekten eğri üzerinde olup olmadığını doğrulamazsa ($y^2 \equiv x^3 + ax + b \pmod p$); saldırgan çok daha küçük alt gruplara sahip zayıf bir eğri üzerindeki noktayı göndererek kurbanın gizli anahtarını ($k$) adım adım sızdırabilir. 
 > **Curve25519 (X25519)** mimarisi bu saldırıyı cebirsel yapısı gereği tamamen imkansız kılar.
+

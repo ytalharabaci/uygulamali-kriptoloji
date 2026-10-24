@@ -100,3 +100,4 @@ print("[✓] Diffie-Hellman Ortak Anahtarı Başarıyla Eşleşti!")
 > **Logjam Saldırısı (CVE-2015-4000): Zayıf Grup Parametreleri**
 > 2015 yılında keşfedilen Logjam saldırısında, binlerce web ve VPN sunucusunun aynı standart 1024-bitlik Diffie-Hellman asalını ($p$) paylaştığı ortaya çıkmıştır. Saldırganlar (özellikle devlet destekli aktörler) bu tek asal için aylar süren bir ön hesaplama (*precomputation*) yaparak, bu asalı kullanan tüm oturumları dakikalar içinde deşifre etmiştir.
 > **Kural:** Klasik DH için en az **2048-bit veya 3072-bit** asallar kullanılmalı ya da standart olarak **Eliptik Eğri Diffie-Hellman (X25519)** mimarisine geçilmelidir.
+

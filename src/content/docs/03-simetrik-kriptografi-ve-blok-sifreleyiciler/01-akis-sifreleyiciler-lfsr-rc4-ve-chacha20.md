@@ -116,3 +116,4 @@ func main() {
 > Akış şifreleyicilerde aynı anahtar ve aynı *Nonce* ile iki farklı mesaj şifrelenirse ($C_1 = M_1 \oplus S$ ve $C_2 = M_2 \oplus S$); saldırgan iki metni XOR'layarak anahtar akışını ($S$) yok eder:
 > $$C_1 \oplus C_2 = M_1 \oplus M_2$$
 > 96-bitlik Nonce uzayında rastgele seçim yapılırsa, Doğum Günü Paradoksu gereği $\approx 2^{48}$ pakette bir çarpışma riski doğar. Bu nedenle yüksek hacimli bağlantılarda **XChaCha20** (192-bit genişletilmiş nonce) kullanılmalıdır.
+

@@ -106,3 +106,4 @@ print(f"[!] Saldırganın açık metin tahminiyle açığa çıkan M2 parçası:
 > [!WARNING]
 > **One-Time Pad'de Anahtar Tekrarı (Key Reuse) = Anında İfşa**
 > Bir akış şifreleyicide veya OTP'de anahtar/keystream bir kez daha kullanılırsa; saldırgan iki şifreli metni birbiriyle XOR'layarak anahtarı denklemden tamamen düşürür ($C_1 \oplus C_2 = M_1 \oplus M_2$). Doğal dil istatistikleri ve *crib dragging* teknikleriyle her iki mesaj dakikalar içinde okunabilir hale gelir. WEP protokolünün (802.11b) çöküşünün başlıca nedeni 24-bit IV tekrarı yüzünden aynı RC4 anahtar akışının üretilmesiydi.
+

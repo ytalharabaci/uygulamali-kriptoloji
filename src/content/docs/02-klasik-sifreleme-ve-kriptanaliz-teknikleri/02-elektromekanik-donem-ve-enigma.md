@@ -117,3 +117,4 @@ print("[+] Doğrulandı: Hiçbir harf kendisiyle eşleşmedi (E(x) != x)")
 > 1. Tembel operatörlerin rotor başlangıç konumları için sevgililerinin baş harflerini veya klavyedeki ardışık üç harfi (`Q-W-E`) seçmesi.
 > 2. Standart selamlama kalıpları (*"Heil Hitler"*, *"Keine besonderen Vorkommnisse"* - kayda değer olay yok).
 > Modern sistemlerde insan faktörünün anahtar seçimine dahil edilmemesi (tam otomatik CSPRNG zorunluluğu) Enigma'dan çıkarılan en büyük derstir.
+

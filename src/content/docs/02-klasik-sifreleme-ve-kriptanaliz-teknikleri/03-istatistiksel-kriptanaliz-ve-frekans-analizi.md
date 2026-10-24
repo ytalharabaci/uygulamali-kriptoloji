@@ -118,3 +118,4 @@ print(f"[+] Ki-Kare Uyum Skoru          : {score:.2f}")
 > **Anahtar Uzayının Büyüklüğü Kriptografik Dayanıklılık Anlamına Gelmez**
 > Genel bir monoalfabetik ikame şifresinde (her harf rastgele farklı bir harfe eşlenirse) anahtar uzayı $26! \approx 4.03 \times 10^{26}$ ihtimaldir. Bu sayı modern süper bilgisayarların kaba kuvvetle tarayamayacağı kadar büyüktür. Ancak **harf frekans analizi** sayesinde bu devasa anahtar uzayı brute-force'a gerek kalmadan birkaç saniyede kırılır. 
 > Modern simetrik kriptografi (AES), Shannon'ın tanımladığı **Karışıklık (Confusion)** ve **Yayılma (Diffusion)** ilkeleriyle açık metin istatistiklerini şifreli metinde tamamen yok eder.
+

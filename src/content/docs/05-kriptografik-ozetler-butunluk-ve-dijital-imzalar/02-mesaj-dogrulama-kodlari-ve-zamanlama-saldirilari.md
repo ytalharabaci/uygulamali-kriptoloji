@@ -129,3 +129,4 @@ func main() {
 > [!CAUTION]
 > **API Güvenliği Kuralı: Doğrulama Daima Sabit Zamanlı Olmalıdır**
 > Sadece HMAC değil; parola özetleri, API tokenları, CSRF tokenları ve oturum kimlikleri doğrulanırken **istisnasız her zaman** sabit zamanlı karşılaştırma fonksiyonları (`subtle.ConstantTimeCompare`, `hmac.compare_digest`) kullanılmalıdır.
+

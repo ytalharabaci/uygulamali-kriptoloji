@@ -131,3 +131,4 @@ func main() {
 > **Modüler Üs Almada Zamanlama Yan Kanalı (Timing Side-Channel)**
 > Standart *Square-and-Multiply* algoritmasında üssün her biti tek tek taranır. Eğer bit `1` ise hem kare alma (*square*) hem de çarpma (*multiply*) yapılır; bit `0` ise sadece kare alınır. Çarpma ek işlem süresi gerektirdiğinden, işlemci çevrimlerini izleyen bir saldırgan yürütme süresinden gizli anahtarın ($d$) bit dizilimini çıkarabilir. 
 > Güvenli kriptografik kütüphaneler bu nedenle **Sabit Zamanlı (Constant-Time)** algoritma sürümlerini (örneğin *Montgomery Ladder*) kullanır.
+

@@ -108,3 +108,4 @@ assert plain == recovered
 > **Klasik Şifrelerin Temel Zaafları**
 > * **Sezar/Atbash:** Harf frekansı doğrudan korunur. Türkçe metinde en çok geçen harf olan 'A' veya 'E', şifreli metindeki en sık harf tespit edilerek anında kırılır.
 > * **Vigenère:** Anahtar uzunluğu ($L$) tespit edildiği anda şifre, $L$ adet bağımsız Sezar şifresine ayrışır ve her biri frekans analiziyle çözülür (Bkz: Modül 2.4 Kasiski Testi).
+

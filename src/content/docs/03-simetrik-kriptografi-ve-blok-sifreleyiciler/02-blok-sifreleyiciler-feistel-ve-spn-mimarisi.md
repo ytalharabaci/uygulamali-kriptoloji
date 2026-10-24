@@ -100,3 +100,4 @@ assert plaintext_block == recovered_block
 > **Sweet32 Zafiyeti (CVE-2016-2183): 64-bit Blok Boyutunun Sonu**
 > Doğum Günü Paradoksu gereği, $n$-bit blok boyutuna sahip bir şifreleyicide yaklaşık $2^{n/2}$ blok şifrelendikten sonra iki farklı açık metin bloğunun aynı şifreli bloğu üretme (çarpışma) olasılığı %50'ye ulaşır. 
 > DES ve Blowfish gibi 64-bit blok kullanan sistemlerde $2^{32}$ blok ($\approx 32\text{ GB}$) veri aktarıldığında çarpışmalar oluşur ve oturum çerezleri ele geçirilebilir. Bu nedenle **modern standart blok boyutu en az 128 bit (AES)** olmak zorundadır.
+

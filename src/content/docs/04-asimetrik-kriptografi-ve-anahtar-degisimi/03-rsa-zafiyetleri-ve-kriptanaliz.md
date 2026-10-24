@@ -102,3 +102,4 @@ assert p_found * q_found == n_vulnerable
 > 2. $p$ ve $q$ bağımsız CSPRNG ile üretilmeli, $|p - q| > 2^{n\_bits / 2 - 100}$ olmalıdır (Fermat saldırısını önlemek için).
 > 3. Açık üs $e = 65537$ seçilmeli ($e = 3$ küçük açık üs zaaflarına açıktır).
 > 4. Gizli üs $d$, Wiener sınırının çok üzerinde olmalıdır ($d > n^{0.5}$).
+

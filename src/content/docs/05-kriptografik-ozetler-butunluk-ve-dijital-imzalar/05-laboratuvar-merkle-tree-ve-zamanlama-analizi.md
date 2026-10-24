@@ -84,3 +84,4 @@ if __name__ == "__main__":
 > **Ağ Jitter'ına Karşı İstatistiksel Örnekleme**
 > Gerçek dünyada internet trafiğindeki paket gecikmeleri (jitter) tek bir ölçümü yanıltabilir. Gerçek kriptanalistler her aday bayt için sunucuya 50-100 kez istek gönderir ve standart sapmayı filtreleyerek medyan süreleri karşılaştırır. 
 > Yazılım geliştirici olarak tek ve kesin kural: **Kriptografik karşılaştırmalarda erken çıkışlı döngü asla yazmayın; daima `crypto/subtle` veya `hmac.compare_digest` kullanın.**
+

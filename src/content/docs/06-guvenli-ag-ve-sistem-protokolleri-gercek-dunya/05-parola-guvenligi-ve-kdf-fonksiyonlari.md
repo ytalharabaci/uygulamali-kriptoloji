@@ -104,3 +104,4 @@ func main() {
 > **Donanım Maliyetini Savunmada Silah Olarak Kullanmak**
 > Bir saldırganın özel ASIC çiplerinde saniyede 1 trilyon deneme yapabilmesinin nedeni, standart algoritmaların çip üzerinde neredeyse sıfır silikon alanı (birkaç transistör) kaplamasıdır. 
 > **Argon2id**, tek bir parola doğrulaması için saldırganın çipine **64 Megabayt RAM** tahsis etme zorunluluğu getirir. Bir ASIC veya GPU üzerine terabaytlarca hızlı bellek koymak fiziksel ve mali olarak imkansız hale geldiğinden, saldırganın kaba kuvvet operasyonu ekonomik olarak iflas eder.
+
