@@ -1,0 +1,51 @@
+# Pages CMS configuration (https://app.pagescms.org). Docs: https://pagescms.org/docs/configuration/
+#
+# Chapters live in src/content/docs/<NN-modül>/<NN-konu>.md with their images in the same folder.
+# Pages CMS writes only the fields listed below, so every frontmatter key used by the chapters
+# (title, sidebar.order, sidebar.label) is declared. index.md and 404.md (Starlight hero/splash
+# pages) are excluded and edited in the repository.
+
+media:
+  - name: docs
+    label: Bölüm görselleri
+    input: src/content/docs
+    # Paths are written relative to a chapter page: ../<bölüm>/<görsel>.webp
+    output: ..
+    categories: [image]
+
+content:
+  - name: docs
+    label: Bölümler
+    type: collection
+    path: src/content/docs
+    subfolders: true
+    format: yaml-frontmatter
+    exclude: [index.md, 404.md]
+    filename:
+      template: "{primary}.md"
+      field: create
+    view:
+      fields: [title]
+      primary: title
+    fields:
+      - name: title
+        label: Başlık
+        type: string
+        required: true
+      - name: sidebar
+        label: Kenar çubuğu
+        type: object
+        fields:
+          - name: order
+            label: Sıra
+            type: number
+          - name: label
+            label: Etiket (ör. "1.1  Başlık")
+            type: string
+      - name: body
+        label: İçerik (Markdown)
+        # Raw Markdown editor: bodies contain Mermaid, tables and Starlight asides that a
+        # rich-text round trip would rewrite.
+        type: code
+        options:
+          format: markdown
