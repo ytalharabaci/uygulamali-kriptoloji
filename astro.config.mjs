@@ -113,16 +113,6 @@ export default defineConfig({
 			],
 			sidebar: [
 				{
-					label: '🛡️ Siber Güvenlik Operasyonları Kitabı ↗',
-					link: 'https://ytalharabaci.github.io/siber-guvenlik-operasyonlari/',
-					attrs: { target: '_blank', rel: 'noopener' },
-				},
-				{
-					label: '🌐 Ağ Yönetimi ve Güvenliği Kitabı ↗',
-					link: 'https://ytalharabaci.github.io/ag-yonetimi-ve-guvenligi/',
-					attrs: { target: '_blank', rel: 'noopener' },
-				},
-				{
 					label: '01. Kriptolojinin Temelleri ve Matematiksel Altyapı',
 					collapsed: true,
 					items: [{ autogenerate: { directory: '01-kriptolojinin-temelleri-ve-matematiksel-altyapi' } }],
