@@ -9,6 +9,8 @@ Dijital imzalar; el yazısı imzanın dijital dünyadaki karşılığıdır anca
 
 ## 1. Teorik Sezgi & Matematik
 
+![Dijital İmza Üretimi ve Doğrulama Döngüsü](./0_Q9yF6vAzC-qdlXni.webp)
+
 ### ECDSA İmza Mekanizması
 
 Eliptik eğriler üzerinde tanımlı ECDSA protokolünde:
@@ -105,9 +107,9 @@ assert real_private_key == recovered_key
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!IMPORTANT]
-> **Modern Çözüm: Deterministik İmzalar (RFC 6979 ve Ed25519)**
-> ECDSA'daki $k$ rastgelelik hatası riskini tamamen ortadan kaldırmak için iki modern standart geliştirilmiştir:
-> 1. **RFC 6979 (Deterministik ECDSA):** $k$ değeri bir CSPRNG'den rastgele çekilmez; gizli anahtarın ve mesaj özetinin HMAC'i alınarak deterministik olarak üretilir ($k = HMAC(d_A, H(m))$). Aynı mesaj her zaman aynı $k$'yı üretirken, farklı mesajlar kesinlikle farklı ve tahmin edilemez $k$ üretir.
-> 2. **Ed25519 (Twisted Edwards):** Doğal olarak deterministiktir, rastgelelik üretimine ihtiyaç duymaz ve yan kanal saldırılarına karşı tam korumalıdır. Günümüzde SSH, Tor ve Signal'in varsayılan imza standardıdır.
+:::caution[Modern Çözüm: Deterministik İmzalar (RFC 6979 ve Ed25519)]
+ECDSA'daki $k$ rastgelelik hatası riskini tamamen ortadan kaldırmak için iki modern standart geliştirilmiştir:
+1. **RFC 6979 (Deterministik ECDSA):** $k$ değeri bir CSPRNG'den rastgele çekilmez; gizli anahtarın ve mesaj özetinin HMAC'i alınarak deterministik olarak üretilir ($k = HMAC(d_A, H(m))$). Aynı mesaj her zaman aynı $k$'yı üretirken, farklı mesajlar kesinlikle farklı ve tahmin edilemez $k$ üretir.
+2. **Ed25519 (Twisted Edwards):** Doğal olarak deterministiktir, rastgelelik üretimine ihtiyaç duymaz ve yan kanal saldırılarına karşı tam korumalıdır. Günümüzde SSH, Tor ve Signal'in varsayılan imza standardıdır.
+:::
 

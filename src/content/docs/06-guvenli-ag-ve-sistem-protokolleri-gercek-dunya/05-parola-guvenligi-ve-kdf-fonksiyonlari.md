@@ -11,6 +11,8 @@ Kullanıcı parolalarını korumak; standart kriptografik özet fonksiyonlarınd
 
 ### Parola Saklama Evrimi
 
+![Kriptosistemlerde İnsan Faktörü ve Parola Alışkanlıkları](./0_T75D0kY4zcu3_J5U.webp)
+
 1. **Düz Metin (Plaintext):** Veritabanı sızıntısında tüm hesaplar anında ele geçer.
 2. **Düz Hash ($H(P)$):** Saldırganlar **Gökkuşağı Tabloları (*Rainbow Tables*)** adını verdikleri milyarlarca önceden hesaplanmış özet tablosuyla $MD5$ veya $SHA1$ özetlerini anında açık metne çevirir.
 3. **Tuzlanmış Hash ($H(P \parallel \text{Salt})$):** Her kullanıcı için benzersiz bir rastgele dize (*Salt*) üretilir. Gökkuşağı tablolarını tamamen işlevsiz kılar; ancak modern GPU'lar (RTX 4090) saniyede yüz milyarlarca tuzlu SHA-256 deneyebildiği için parola sözlük saldırılarına karşı yetersizdir.
@@ -100,8 +102,18 @@ func main() {
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!IMPORTANT]
-> **Donanım Maliyetini Savunmada Silah Olarak Kullanmak**
-> Bir saldırganın özel ASIC çiplerinde saniyede 1 trilyon deneme yapabilmesinin nedeni, standart algoritmaların çip üzerinde neredeyse sıfır silikon alanı (birkaç transistör) kaplamasıdır. 
-> **Argon2id**, tek bir parola doğrulaması için saldırganın çipine **64 Megabayt RAM** tahsis etme zorunluluğu getirir. Bir ASIC veya GPU üzerine terabaytlarca hızlı bellek koymak fiziksel ve mali olarak imkansız hale geldiğinden, saldırganın kaba kuvvet operasyonu ekonomik olarak iflas eder.
+:::caution[Donanım Maliyetini Savunmada Silah Olarak Kullanmak]
+Bir saldırganın özel ASIC çiplerinde saniyede 1 trilyon deneme yapabilmesinin nedeni, standart algoritmaların çip üzerinde neredeyse sıfır silikon alanı (birkaç transistör) kaplamasıdır. 
+**Argon2id**, tek bir parola doğrulaması için saldırganın çipine **64 Megabayt RAM** tahsis etme zorunluluğu getirir. Bir ASIC veya GPU üzerine terabaytlarca hızlı bellek koymak fiziksel ve mali olarak imkansız hale geldiğinden, saldırganın kaba kuvvet operasyonu ekonomik olarak iflas eder.
+:::
+
+### Kimlik Doğrulama Saldırı Vektörleri ve İstemci Güvenliği
+
+Kriptografik olarak kusursuz bir KDF fonksiyonu bile parolaların girildiği veya saklandığı uç noktalardaki güvenlik zaaflarını telafi edemez:
+
+![Keylogger ve İstemci Tarafı Parola Ele Geçirme](./0_9je3oKzwvjFzUeGg.webp)
+
+![Fiziksel ve Bellek Tabanlı Kimlik Bilgisi Çıkarma Saldırıları](./0_b4jQGvhwF6m7lBcN.webp)
+
+![Kimlik Avı ve İletişim Hattına Müdahale](./0_C1Redj9meJnjH1ur.webp)
 

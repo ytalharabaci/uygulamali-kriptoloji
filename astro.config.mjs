@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import rehypeSectionNumber from './src/plugins/rehype-section-number.mjs';
 
 export default defineConfig({
@@ -12,7 +14,8 @@ export default defineConfig({
 		defaultStrategy: 'hover',
 	},
 	markdown: {
-		rehypePlugins: [rehypeSectionNumber],
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex, rehypeSectionNumber],
 	},
 	integrations: [
 		mermaid({
@@ -46,12 +49,21 @@ export default defineConfig({
 				Footer: './src/components/Footer.astro',
 			},
 			customCss: [
+				'katex/dist/katex.min.css',
 				'./src/styles/tokens.css',
 				'./src/styles/typography.css',
 				'./src/styles/layout.css',
 				'./src/styles/responsive.css',
 			],
 			head: [
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'stylesheet',
+						href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+						crossorigin: 'anonymous',
+					},
+				},
 				{
 					tag: 'link',
 					attrs: {

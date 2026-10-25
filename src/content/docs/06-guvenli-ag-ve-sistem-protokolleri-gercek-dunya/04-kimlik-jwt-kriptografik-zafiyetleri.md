@@ -119,11 +119,11 @@ except PermissionError as e:
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **JWT Güvenli Doğrulama Kuralı**
-> Asla kütüphanenizin algoritmayı token başlığından (`header.alg`) otomatik seçmesine izin vermeyin. Doğrulama fonksiyonuna her zaman izin verilen algoritma listesini sabit parametre olarak geçin:
-> ```go
-> // Go örneği:
-> jwt.Parse(tokenStr, keyFunc, jwt.WithValidMethods([]string{"RS256"}))
-> ```
+:::danger[JWT Güvenli Doğrulama Kuralı]
+Asla kütüphanenizin algoritmayı token başlığından (`header.alg`) otomatik seçmesine izin vermeyin. Doğrulama fonksiyonuna her zaman izin verilen algoritma listesini sabit parametre olarak geçin:
+```go
+// Go örneği:
+jwt.Parse(tokenStr, keyFunc, jwt.WithValidMethods([]string{"RS256"}))
+```
+:::
 

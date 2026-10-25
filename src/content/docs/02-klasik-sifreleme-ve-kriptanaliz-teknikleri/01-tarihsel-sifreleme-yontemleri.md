@@ -16,7 +16,9 @@ Alfabedeki her harfi sabit bir $k$ adımı kadar ileri kaydırır. Matematiksel 
 $$C_i \equiv (P_i + k) \pmod{26}$$
 $$P_i \equiv (C_i - k) \pmod{26}$$
 
-Anahtar uzayı $|\mathcal{K}| = 25$'tir. Bu kadar küçük bir anahtar uzayı saniyeler içinde kaba kuvvetle (*brute-force*) taranabilir.
+Anahtar uzayı $|\mathcal{K}| = 25$'tir. Bu kadar küçük bir anahtar uzayı saniyeler içinde kaba kuvvetle (*brute-force*) taranabilir. Benzer şekilde, afin şifreleme gibi doğrusal modüler dönüşümlerde de harfler matematiksel formüllerle ($C \equiv (aP + b) \pmod{m}$) doğrudan birbirine eşlenir.
+
+![Affine Şifreleme ve Doğrusal Modüler Dönüşüm](./0_Z-cr2RD4JROMRDIQ.webp)
 
 ### 2. Atbash Şifresi (Ayna Dönüşümü)
 
@@ -33,6 +35,10 @@ Blaise de Vigenère tarafından geliştirilen bu yöntemde, tek bir sabit kaydı
 $$C_i \equiv (P_i + K_{i \pmod L}) \pmod{26}$$
 
 Burada $L$, anahtar kelimenin uzunluğudur. Vigenère şifresi, monoalfabetik frekans analizini bozduğu için yüzyıllar boyunca *"le chiffre indéchiffrable"* (kırılamaz şifre) olarak anılmıştır.
+
+![Vigenère Tablosu (Tabula Recta)](./0_QLwvLTeM5X8wzRbJ.webp)
+
+![Vigenère Anahtar ve Matris Mekanizması](./0_Vo-d0ErN-moY0kLR.webp)
 
 ### 4. Playfair ve Scytale
 
@@ -104,8 +110,8 @@ assert plain == recovered
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **Klasik Şifrelerin Temel Zaafları**
-> * **Sezar/Atbash:** Harf frekansı doğrudan korunur. Türkçe metinde en çok geçen harf olan 'A' veya 'E', şifreli metindeki en sık harf tespit edilerek anında kırılır.
-> * **Vigenère:** Anahtar uzunluğu ($L$) tespit edildiği anda şifre, $L$ adet bağımsız Sezar şifresine ayrışır ve her biri frekans analiziyle çözülür (Bkz: Modül 2.4 Kasiski Testi).
+:::danger[Klasik Şifrelerin Temel Zaafları]
+* **Sezar/Atbash:** Harf frekansı doğrudan korunur. Türkçe metinde en çok geçen harf olan 'A' veya 'E', şifreli metindeki en sık harf tespit edilerek anında kırılır.
+* **Vigenère:** Anahtar uzunluğu ($L$) tespit edildiği anda şifre, $L$ adet bağımsız Sezar şifresine ayrışır ve her biri frekans analiziyle çözülür (Bkz: Modül 2.4 Kasiski Testi).
+:::
 

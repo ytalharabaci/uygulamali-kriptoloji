@@ -9,6 +9,8 @@ Bir blok şifreleyici tek başına yalnızca 16 baytlık tek bir bloğu şifrele
 
 ## 1. Teorik Sezgi & Matematik
 
+![Simetrik Blok Şifreleme ve Deşifreleme Döngüsü](./0_ct3PFF4EH3YUqAlK.webp)
+
 ### 1. ECB (Electronic Codebook) - Kullanılması Yasaklanan Mod
 
 Her 16 baytlık blok bağımsız olarak aynı anahtarla şifrelenir: $C_i = E_K(P_i)$.
@@ -122,8 +124,8 @@ func main() {
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **AES-GCM'de Nonce Tekrarı Felaketi: The "Forbidden Attack"**
-> AES-GCM'de aynı anahtarla aynı Nonce değeri iki kez kullanılırsa; saldırgan basit bir sonlu alan cebiriyle ($GF(2^{128})$ üzerinde iki etiket arasındaki farkı çözerek) **gizli GHASH kimlik doğrulama anahtarını ($H$) tamamen elde eder**.
-> Bu anahtar ele geçirildiğinde saldırgan dilediği gibi sahte şifreli metinler ve geçerli etiketler üretebilir; sistemin tüm bütünlüğü çöker. Nonce yönetiminde sayaç kullanılmalı ya da **AES-GCM-SIV** (sentetik IV - Nonce misuse-resistant) tercih edilmelidir.
+:::danger[AES-GCM'de Nonce Tekrarı Felaketi: The "Forbidden Attack"]
+AES-GCM'de aynı anahtarla aynı Nonce değeri iki kez kullanılırsa; saldırgan basit bir sonlu alan cebiriyle ($GF(2^{128})$ üzerinde iki etiket arasındaki farkı çözerek) **gizli GHASH kimlik doğrulama anahtarını ($H$) tamamen elde eder**.
+Bu anahtar ele geçirildiğinde saldırgan dilediği gibi sahte şifreli metinler ve geçerli etiketler üretebilir; sistemin tüm bütünlüğü çöker. Nonce yönetiminde sayaç kullanılmalı ya da **AES-GCM-SIV** (sentetik IV - Nonce misuse-resistant) tercih edilmelidir.
+:::
 

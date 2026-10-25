@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
 ## 3. Güvenlik & Kriptanaliz Notu
 
-> [!NOTE]
-> **Yüksek Entropi Tek Başına Güvenlik Anlamına Gelmez**
-> Sıkıştırılmış bir dosya (örneğin `.zip` veya `.gz`) ya da zayıf bir şifreleme algoritması (örneğin RC4) da 7.99 bit/bayt entropi üretir. Entropi testleri verinin rastgele dağılıp dağılmadığını ölçer; ancak bir üretecin kriptanalitik sağlamlığını (kestirilemezliğini) tek başına kanıtlayamaz. Gerçek kriptografik testler için NIST SP 800-22 test süiti ve Dieharder istatistik testleri uygulanır.
+:::note[Yüksek Entropi Tek Başına Güvenlik Anlamına Gelmez]
+Sıkıştırılmış bir dosya (örneğin `.zip` veya `.gz`) ya da zayıf bir şifreleme algoritması (örneğin RC4) da 7.99 bit/bayt entropi üretir. Entropi testleri verinin rastgele dağılıp dağılmadığını ölçer; ancak bir üretecin kriptanalitik sağlamlığını (kestirilemezliğini) tek başına kanıtlayamaz. Gerçek kriptografik testler için NIST SP 800-22 test süiti ve Dieharder istatistik testleri uygulanır.
+:::
 

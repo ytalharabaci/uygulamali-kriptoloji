@@ -9,10 +9,14 @@ Akış şifreleyiciler (*Stream Ciphers*), veriyi sabit boyutlu bloklara bölmek
 
 ## 1. Teorik Sezgi & Matematik
 
+![Simetrik Şifreleme Akışı ve Temel Prensip](./0_XxKCSz8Z5gCClHYt.webp)
+
 Akış şifreleyicilerin çalışma mantığı sözde-rastgele bir anahtar akışı ($S$) üreterek bunu açık metinle ($P$) XOR'lamaktır:
 
 $$C_i = P_i \oplus S_i$$
 $$P_i = C_i \oplus S_i$$
+
+![Blok ve Akış Şifreleri Mimarisi Karşılaştırması](./0_PVVBIhJHRuKvdXHi.webp)
 
 ### 1. LFSR (Linear Feedback Shift Register)
 
@@ -27,6 +31,8 @@ Ron Rivest tarafından 1987'de tasarlanan RC4, 256 baytlık bir permütasyon tab
 * **Tasarım Kusuru:** Çıktının ilk birkaç yüz baytında belirli baytların (özellikle ikinci baytın sıfır olma olasılığı $1/128$) istatistiksel önyargısı (*bias*) vardır. **FMS saldırısı** ile WEP kablosuz ağ anahtarları bu önyargı sayesinde kırılmıştır. Günümüzde TLS ve SSH standartlarından tamamen yasaklanmıştır (RFC 7465).
 
 ### 3. Modern Standart: ChaCha20 (ARX Mimarisi)
+
+![ChaCha20 Mimarisi ve Çeyrek Tur Dönüşümleri](./0_p11w2EzrPzNTF_DK.webp)
 
 Daniel J. Bernstein (DJB) tarafından Salsa20'nin geliştirilmiş hali olarak tasarlanan ChaCha20; S-Box veya donanım tabloları kullanmaz. Yalnızca 3 temel işlemle çalışır: **Toplama (Add), Döndürme (Rotate), Dışlayıcı Veya (XOR)** $\rightarrow$ **ARX**.
 
@@ -111,9 +117,9 @@ func main() {
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **ChaCha20'de Nonce Tekrarı (Nonce Reuse) Ölümcüldür**
-> Akış şifreleyicilerde aynı anahtar ve aynı *Nonce* ile iki farklı mesaj şifrelenirse ($C_1 = M_1 \oplus S$ ve $C_2 = M_2 \oplus S$); saldırgan iki metni XOR'layarak anahtar akışını ($S$) yok eder:
-> $$C_1 \oplus C_2 = M_1 \oplus M_2$$
-> 96-bitlik Nonce uzayında rastgele seçim yapılırsa, Doğum Günü Paradoksu gereği $\approx 2^{48}$ pakette bir çarpışma riski doğar. Bu nedenle yüksek hacimli bağlantılarda **XChaCha20** (192-bit genişletilmiş nonce) kullanılmalıdır.
+:::danger[ChaCha20'de Nonce Tekrarı (Nonce Reuse) Ölümcüldür]
+Akış şifreleyicilerde aynı anahtar ve aynı *Nonce* ile iki farklı mesaj şifrelenirse ($C_1 = M_1 \oplus S$ ve $C_2 = M_2 \oplus S$); saldırgan iki metni XOR'layarak anahtar akışını ($S$) yok eder:
+$$C_1 \oplus C_2 = M_1 \oplus M_2$$
+96-bitlik Nonce uzayında rastgele seçim yapılırsa, Doğum Günü Paradoksu gereği $\approx 2^{48}$ pakette bir çarpışma riski doğar. Bu nedenle yüksek hacimli bağlantılarda **XChaCha20** (192-bit genişletilmiş nonce) kullanılmalıdır.
+:::
 

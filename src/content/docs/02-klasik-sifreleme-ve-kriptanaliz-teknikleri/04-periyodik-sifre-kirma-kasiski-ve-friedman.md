@@ -9,6 +9,8 @@ Yüzyıllar boyunca *"kırılamaz"* kabul edilen Vigenère şifresi, 19. yüzyı
 
 ## 1. Teorik Sezgi & Matematik
 
+![Kriptanaliz Mantığı ve Şifre Çözüm Metodolojisi](./0_WYSM0JXe3tpf70lG.webp)
+
 Vigenère şifresindeki temel kusur **periyodikliktir**. Eğer $L$ uzunluğunda bir anahtar kelime kullanılıyorsa, açık metindeki aynı kelime grupları tesadüfen anahtarın aynı pozisyonuna denk geldiğinde şifreli metinde **tamamen aynı harf bloklarını** üretir.
 
 ### 1. Kasiski İncelemesi (Kasiski Examination)
@@ -47,6 +49,8 @@ flowchart TD
 ---
 
 ## 2. Gerçek Hayat Mimarisi
+
+![Kaba Kuvvet (Brute-Force) ve Anahtar Arama Uzayı Analizi](./1_TC-mr-YoZ9Rb2ZQ3syKvEw.webp)
 
 * **Blok Şifreleyici Tasarımına Etkisi:** Kasiski analizi modern kriptograflara çok önemli bir ders vermiştir: **Şifreleme asla periyodik ve bağımsız bloklar halinde yapılmamalıdır.** 
 * Modern AES'te bu durum CBC modundaki **Başlatma Vektörü (IV)** veya CTR modundaki **Sayaç (Nonce)** mimarisiyle çözülmüş; her bloğun şifresi önceki bloğa veya bir sayaca bağlanarak periyodik desenler yok edilmiştir.
@@ -97,9 +101,11 @@ estimate_key_length(cipher_sample, max_len=10)
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!WARNING]
-> **Bilinen Açık Metin Saldırısı (Known-Plaintext Attack - KPA)**
-> Vigenère şifrelemesinde açık metnin sadece birkaç harfi (örneğin belgenin başındaki *"Sayın Yetkili"* veya *"HTTP/1.1"*) biliniyorsa; anahtar doğrudan şu formülle çıkarılır:
-> $$K_i \equiv (C_i - P_i) \pmod{26}$$
-> Anahtarın birkaç harfi ele geçirildiğinde, kelimenin tamamı sözlük saldırısıyla tamamlanır ve belgenin kalanı anında deşifre olur.
+:::caution[Bilinen Açık Metin Saldırısı (Known-Plaintext Attack - KPA)]
+Vigenère şifrelemesinde açık metnin sadece birkaç harfi (örneğin belgenin başındaki *"Sayın Yetkili"* veya *"HTTP/1.1"*) biliniyorsa; anahtar doğrudan şu formülle çıkarılır:
+
+$$K_i \equiv (C_i - P_i) \pmod{26}$$
+
+Anahtarın birkaç harfi ele geçirildiğinde, kelimenin tamamı sözlük saldırısıyla tamamlanır ve belgenin kalanı anında deşifre olur.
+:::
 

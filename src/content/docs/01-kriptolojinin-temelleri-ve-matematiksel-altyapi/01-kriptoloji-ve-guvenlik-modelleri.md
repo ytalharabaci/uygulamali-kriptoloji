@@ -9,6 +9,8 @@ Modern bilgi güvenliği mimarilerinin omurgasını oluşturan kriptoloji, verin
 
 ## 1. Teorik Sezgi & Matematik
 
+![Kriptoloji, Kriptografi ve Kriptanaliz Disiplinleri](./1_hjisKMmnXD1yQQXQ3IOFjA.webp)
+
 Kriptoloji şemsiyesi temelde iki zıt ancak birbirini sürekli besleyen alana ayrılır:
 * **Kriptografi (Şifre Yazımı):** Açık metni ($P \in \mathcal{M}$), bir anahtar ($K \in \mathcal{K}$) kullanarak şifreli metne ($C \in \mathcal{C}$) dönüştüren algoritmalar tasarlama disiplini.
 * **Kriptanaliz (Şifre Çözümü):** Anahtara sahip olmadan veya şifreleme sistemindeki kusurlardan yararlanarak $C$'den $P$'yi elde etme ya da anahtarı türetme bilimi.
@@ -21,6 +23,8 @@ Kriptoloji şemsiyesi temelde iki zıt ancak birbirini sürekli besleyen alana a
 
 Sistemin algoritması düşman tarafından tamamen bilinse dahi sistem matematiksel olarak kırılamaz olmalıdır. *"Gizlilik yoluyla güvenlik"* (*Security through obscurity*) anlayışı bir yanılsamadır; açık standartlar küresel denetime ve kriptanaliz testlerine tabi tutuldukça olgunlaşır.
 
+![Temel Güvenlik Modelleri ve Şifreleme Süreci](./0_2Vwirutk3ytVmQK7.webp)
+
 ```mermaid
 flowchart LR
     A["Açık Metin (Plaintext: P)"] --> B["Şifreleme Algoritması: E_k(P)"]
@@ -30,6 +34,8 @@ flowchart LR
     K -.-> D
     D --> E["Kurtarılan Metin (P)"]
 ```
+
+![Kriptografik Algoritmalar Sınıflandırma Ağacı](./1_-xJo79RzeZLimVgF7AMPJw.webp)
 
 ### Shannon'ın Kusursuz Gizlilik Tanımı ve One-Time Pad (OTP)
 
@@ -46,6 +52,8 @@ Başka bir deyişle; şifreli metin, saldırgana açık metin hakkında sıfır 
 2. Şifreleme XOR işlemidir: $c = m \oplus k$
 3. Deşifreleme aynı anahtarla XOR işlemidir: $m = c \oplus k$
 4. **Kritik Kural:** Anahtar tamamen rastgele (CSPRNG) üretilmeli ve asla ikinci kez kullanılmamalıdır.
+
+![One-Time Pad (Vernam) Kırılmaz Şifreleme Mekanizması](./0_6s6SoNCSSj-Sqs27.webp)
 
 Shannon Teoremi kanıtlamıştır ki; kusursuz gizlilik için anahtar uzayı mesaj uzayından küçük olamaz ($|\mathcal{K}| \ge |\mathcal{M}|$). Bu nedenle OTP pratik internet iletişiminde (terabaytlarca veri) anahtar dağıtım problemi yüzünden tek başına kullanılamaz; modern kriptografi bu teorik sınırı hesaplama zorluğu varsayımlarına (DLP, Factorization, Lattices) dayalı **hesaplamalı güvenlik** (*Computational Security*) ile aşar.
 
@@ -103,7 +111,7 @@ print(f"[!] Saldırganın açık metin tahminiyle açığa çıkan M2 parçası:
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!WARNING]
-> **One-Time Pad'de Anahtar Tekrarı (Key Reuse) = Anında İfşa**
-> Bir akış şifreleyicide veya OTP'de anahtar/keystream bir kez daha kullanılırsa; saldırgan iki şifreli metni birbiriyle XOR'layarak anahtarı denklemden tamamen düşürür ($C_1 \oplus C_2 = M_1 \oplus M_2$). Doğal dil istatistikleri ve *crib dragging* teknikleriyle her iki mesaj dakikalar içinde okunabilir hale gelir. WEP protokolünün (802.11b) çöküşünün başlıca nedeni 24-bit IV tekrarı yüzünden aynı RC4 anahtar akışının üretilmesiydi.
+:::caution[One-Time Pad'de Anahtar Tekrarı (Key Reuse) = Anında İfşa]
+Bir akış şifreleyicide veya OTP'de anahtar/keystream bir kez daha kullanılırsa; saldırgan iki şifreli metni birbiriyle XOR'layarak anahtarı denklemden tamamen düşürür ($C_1 \oplus C_2 = M_1 \oplus M_2$). Doğal dil istatistikleri ve *crib dragging* teknikleriyle her iki mesaj dakikalar içinde okunabilir hale gelir. WEP protokolünün (802.11b) çöküşünün başlıca nedeni 24-bit IV tekrarı yüzünden aynı RC4 anahtar akışının üretilmesiydi.
+:::
 

@@ -9,6 +9,8 @@ RSA algoritmasının matematiksel zarafeti, en küçük bir parametre seçim hat
 
 ## 1. Teorik Sezgi & Matematik
 
+![Asimetrik Anahtarlar ve Sayısal Çarpanlara Ayırma Saldırıları](./0_F652-yGJsAll1wHg.webp)
+
 ### 1. Fermat Çarpanlara Ayırma Saldırısı (Yakın Asallar)
 
 Eğer anahtar üretimi sırasında seçilen $p$ ve $q$ asalları birbirine sayısal olarak çok yakınsa ($|p - q|$ küçükse):
@@ -44,6 +46,8 @@ $$c_1^r \cdot c_2^s \equiv (m^{e_1})^r \cdot (m^{e_2})^s \equiv m^{e_1 r + e_2 s
 ---
 
 ## 2. Gerçek Hayat Mimarisi: ROCA Zafiyeti (CVE-2017-15361)
+
+![Anahtar Alanı ve Kimlik Tahmin / Püskürtme Saldırı Yüzeyi](./0_T2U4_r03cwMIK7d0.webp)
 
 2017 yılında Infineon güvenlik yongalarında (TPM, Akıllı Kartlar, Estonya e-kimlik kartları) donanım asallığı testini hızlandırmak için asalların belirli bir matematiksel kalıpla ($p = k \cdot M + (65537^a \bmod M)$) üretildiği ortaya çıktı. 
 Bu kusur sayesinde 2048-bitlik RSA anahtarları, kuantum bilgisayara ihtiyaç duyulmadan sıradan AWS sunucularında birkaç yüz dolarlık hesaplama maliyetiyle çarpanlarına ayrıldı ve milyonlarca vatandaşlık kimlik kartı iptal edildi.
@@ -96,10 +100,10 @@ assert p_found * q_found == n_vulnerable
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!IMPORTANT]
-> **Güvenli RSA Anahtarı Kriterleri**
-> 1. Modül boyutu en az **2048 bit** (tercihen **3072 veya 4096 bit**) olmalıdır.
-> 2. $p$ ve $q$ bağımsız CSPRNG ile üretilmeli, $|p - q| > 2^{n\_bits / 2 - 100}$ olmalıdır (Fermat saldırısını önlemek için).
-> 3. Açık üs $e = 65537$ seçilmeli ($e = 3$ küçük açık üs zaaflarına açıktır).
-> 4. Gizli üs $d$, Wiener sınırının çok üzerinde olmalıdır ($d > n^{0.5}$).
+:::caution[Güvenli RSA Anahtarı Kriterleri]
+1. Modül boyutu en az **2048 bit** (tercihen **3072 veya 4096 bit**) olmalıdır.
+2. $p$ ve $q$ bağımsız CSPRNG ile üretilmeli, $|p - q| > 2^{n\_bits / 2 - 100}$ olmalıdır (Fermat saldırısını önlemek için).
+3. Açık üs $e = 65537$ seçilmeli ($e = 3$ küçük açık üs zaaflarına açıktır).
+4. Gizli üs $d$, Wiener sınırının çok üzerinde olmalıdır ($d > n^{0.5}$).
+:::
 

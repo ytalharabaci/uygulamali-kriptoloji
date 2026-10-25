@@ -88,9 +88,9 @@ def secure_ssh_connect(host: str, username: str, key_path: str):
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **SSH Agent Forwarding (`ssh -A`) Tehlikesi**
-> Geliştiriciler uzak sunucular üzerinden başka sunuculara zıplamak (*jump host*) için sıklıkla `ssh -A` (Agent Forwarding) özelliğini açar. 
-> Eğer ara sunucuda root yetkisine sahip kötü niyetli biri varsa, yerel makinenizdeki SSH-Agent UNIX soketine bağlanarak sizin gizli anahtarlarınızla dilediği sunucuya sizin adınıza oturum açabilir. 
-> **Güvenli Çözüm:** `ssh -A` yerine modern **ProxyJump (`ssh -J`)** direktifi kullanılmalıdır (anahtar asla ara sunucuya temas etmez).
+:::danger[SSH Agent Forwarding (`ssh -A`) Tehlikesi]
+Geliştiriciler uzak sunucular üzerinden başka sunuculara zıplamak (*jump host*) için sıklıkla `ssh -A` (Agent Forwarding) özelliğini açar. 
+Eğer ara sunucuda root yetkisine sahip kötü niyetli biri varsa, yerel makinenizdeki SSH-Agent UNIX soketine bağlanarak sizin gizli anahtarlarınızla dilediği sunucuya sizin adınıza oturum açabilir. 
+**Güvenli Çözüm:** `ssh -A` yerine modern **ProxyJump (`ssh -J`)** direktifi kullanılmalıdır (anahtar asla ara sunucuya temas etmez).
+:::
 

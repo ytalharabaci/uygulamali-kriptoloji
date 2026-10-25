@@ -9,6 +9,8 @@ Kriptografik özet fonksiyonları (*Cryptographic Hash Functions*), herhangi bir
 
 ## 1. Teorik Sezgi & Matematik
 
+![Tek Yönlü Kriptografik Özet Fonksiyonu Mimarisi](./0_caf2jzqzDuHFxZ2H.webp)
+
 Bir özet fonksiyonunun kriptografik olarak güvenli sayılabilmesi için 3 temel şartı sağlaması gerekir:
 
 1. **Pre-image Resistance (Tek Yönlülük):** Verilen bir özet değeri $h$ için $H(m) = h$ koşulunu sağlayan bir $m$ mesajı bulmak hesaplama açısından imkansız olmalıdır ($O(2^n)$ karmaşıklık).
@@ -91,8 +93,8 @@ print("[✓] İdeal Çığ Etkisi Doğrulandı (~%50 bit değişimi)")
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!WARNING]
-> **Özet Fonksiyonlarını Parola Saklamak İçin Kullanmayın!**
-> SHA-256 veya SHA-3 donanımda ve GPU'larda son derece hızlı çalışmak üzere optimize edilmiştir (modern bir RTX 4090 saniyede on milyarlarca SHA-256 hesaplayabilir). 
-> Parola güvenliği için hızlı özet fonksiyonları değil; kaba kuvvet saldırılarını yavaşlatan, bellek-sert (*memory-hard*) **KDF (Argon2id, bcrypt, scrypt)** algoritmaları kullanılmalıdır (Bkz: Modül 6.5).
+:::caution[Özet Fonksiyonlarını Parola Saklamak İçin Kullanmayın!]
+SHA-256 veya SHA-3 donanımda ve GPU'larda son derece hızlı çalışmak üzere optimize edilmiştir (modern bir RTX 4090 saniyede on milyarlarca SHA-256 hesaplayabilir). 
+Parola güvenliği için hızlı özet fonksiyonları değil; kaba kuvvet saldırılarını yavaşlatan, bellek-sert (*memory-hard*) **KDF (Argon2id, bcrypt, scrypt)** algoritmaları kullanılmalıdır (Bkz: Modül 6.5).
+:::
 

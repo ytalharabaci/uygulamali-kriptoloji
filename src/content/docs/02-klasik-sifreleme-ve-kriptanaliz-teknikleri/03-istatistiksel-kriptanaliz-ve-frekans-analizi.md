@@ -13,6 +13,8 @@ Doğal diller (Türkçe, İngilizce, Almanca vb.) rastgele harf dizilerinden olu
 
 ### Harf Frekans İmzaları
 
+![Doğal Dillerde Harf Frekans Dağılımı ve İstatistiksel İmzalar](./0_9LADpthWZ361CIFT.webp)
+
 * **Türkçe:** En sık harfler sırasıyla **A (%11.9)**, **E (%8.9)**, **İ (%8.6)**, **N (%7.4)**, **R (%6.7)**, **L (%6.0)**. En seyrek harfler: **J (%0.03)**, **F (%0.4)**.
 * **İngilizce:** En sık harfler sırasıyla **E (%12.7)**, **T (%9.1)**, **A (%8.2)**, **O (%7.5)**, **I (%7.0)**, **N (%6.7)**.
 
@@ -114,8 +116,8 @@ print(f"[+] Ki-Kare Uyum Skoru          : {score:.2f}")
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!IMPORTANT]
-> **Anahtar Uzayının Büyüklüğü Kriptografik Dayanıklılık Anlamına Gelmez**
-> Genel bir monoalfabetik ikame şifresinde (her harf rastgele farklı bir harfe eşlenirse) anahtar uzayı $26! \approx 4.03 \times 10^{26}$ ihtimaldir. Bu sayı modern süper bilgisayarların kaba kuvvetle tarayamayacağı kadar büyüktür. Ancak **harf frekans analizi** sayesinde bu devasa anahtar uzayı brute-force'a gerek kalmadan birkaç saniyede kırılır. 
-> Modern simetrik kriptografi (AES), Shannon'ın tanımladığı **Karışıklık (Confusion)** ve **Yayılma (Diffusion)** ilkeleriyle açık metin istatistiklerini şifreli metinde tamamen yok eder.
+:::caution[Anahtar Uzayının Büyüklüğü Kriptografik Dayanıklılık Anlamına Gelmez]
+Genel bir monoalfabetik ikame şifresinde (her harf rastgele farklı bir harfe eşlenirse) anahtar uzayı $26! \approx 4.03 \times 10^{26}$ ihtimaldir. Bu sayı modern süper bilgisayarların kaba kuvvetle tarayamayacağı kadar büyüktür. Ancak **harf frekans analizi** sayesinde bu devasa anahtar uzayı brute-force'a gerek kalmadan birkaç saniyede kırılır. 
+Modern simetrik kriptografi (AES), Shannon'ın tanımladığı **Karışıklık (Confusion)** ve **Yayılma (Diffusion)** ilkeleriyle açık metin istatistiklerini şifreli metinde tamamen yok eder.
+:::
 

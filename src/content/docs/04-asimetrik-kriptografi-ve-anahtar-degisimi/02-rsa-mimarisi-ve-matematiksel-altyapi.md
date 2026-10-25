@@ -9,6 +9,8 @@ description: "RSA algoritmasının matematiksel temelleri, Euler Teoremi, Textbo
 
 ## 1. Teorik Sezgi & Matematik
 
+![Asimetrik / Açık Anahtarlı Şifreleme Temel Prensibi](./0_wwVcQD6ILTUMEAq3.webp)
+
 ### Anahtar Üretim Süreci
 
 1. **Asal Seçimi:** İki adet çok büyük ve gizli asal sayı seçilir: $p$ ve $q$ (örneğin her biri 1024 bit).
@@ -26,6 +28,8 @@ description: "RSA algoritmasının matematiksel temelleri, Euler Teoremi, Textbo
 * **Gizli Anahtar (*Private Key*):** $(n, d)$ veya $(p, q, d)$
 
 ### Şifreleme ve Deşifreleme
+
+![RSA Şifreleme ve Çözme Mekanizması](./0_pVs1sy3vN5kCBdeb.webp)
 
 * **Şifreleme:** $c \equiv m^e \pmod{n}$
 * **Deşifreleme:** $m \equiv c^d \pmod{n}$
@@ -103,8 +107,8 @@ func main() {
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **Bleichenbacher'ın Milyon Mesaj Saldırısı (PKCS#1 v1.5 Padding Oracle)**
-> Eski PKCS#1 v1.5 dolgu standardı, sunucunun şifre çözerken dolgu formatının hatalı olup olmadığını dışarı sızdırması durumunda (tıpkı CBC padding oracle gibi) saldırganın yüz binlerce uyarlanabilir şifreli metin (*chosen-ciphertext*) göndererek RSA gizli anahtarı olmadan açık metni tamamen çözmesine imkan verir. 
-> Bu nedenle tüm modern sistemlerde **PKCS#1 v1.5 şifreleme yasaklanmış**, yalnızca **OAEP** standart kılınmıştır.
+:::danger[Bleichenbacher'ın Milyon Mesaj Saldırısı (PKCS#1 v1.5 Padding Oracle)]
+Eski PKCS#1 v1.5 dolgu standardı, sunucunun şifre çözerken dolgu formatının hatalı olup olmadığını dışarı sızdırması durumunda (tıpkı CBC padding oracle gibi) saldırganın yüz binlerce uyarlanabilir şifreli metin (*chosen-ciphertext*) göndererek RSA gizli anahtarı olmadan açık metni tamamen çözmesine imkan verir. 
+Bu nedenle tüm modern sistemlerde **PKCS#1 v1.5 şifreleme yasaklanmış**, yalnızca **OAEP** standart kılınmıştır.
+:::
 

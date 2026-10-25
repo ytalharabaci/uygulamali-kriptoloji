@@ -96,8 +96,8 @@ with socket.create_connection((hostname, 443), timeout=5) as sock:
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!WARNING]
-> **Downgrade (Sürüm Düşürme) Saldırılarına Karşı TLS 1.3 Koruması**
-> Saldırganlar istemci ile sunucu arasına girip desteklenen sürümler listesini tahrif ederek tarafları güvensiz eski sürümlere (TLS 1.0 veya SSL 3.0) zorlamaya çalışırdı (*Downgrade Attack*). 
-> TLS 1.3, sunucu rastgele sayısının (*ServerRandom*) son 8 baytına sabit bir sihirli değer gömerek (`444F574E47524401`) sürüm düşürme girişimlerini el sıkışma anında tespit eder ve bağlantıyı anında keser.
+:::caution[Downgrade (Sürüm Düşürme) Saldırılarına Karşı TLS 1.3 Koruması]
+Saldırganlar istemci ile sunucu arasına girip desteklenen sürümler listesini tahrif ederek tarafları güvensiz eski sürümlere (TLS 1.0 veya SSL 3.0) zorlamaya çalışırdı (*Downgrade Attack*). 
+TLS 1.3, sunucu rastgele sayısının (*ServerRandom*) son 8 baytına sabit bir sihirli değer gömerek (`444F574E47524401`) sürüm düşürme girişimlerini el sıkışma anında tespit eder ve bağlantıyı anında keser.
+:::
 

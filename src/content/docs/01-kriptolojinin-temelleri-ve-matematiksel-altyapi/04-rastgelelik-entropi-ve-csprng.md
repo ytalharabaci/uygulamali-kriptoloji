@@ -11,6 +11,8 @@ Kriptografinin en güçlü matematiksel tasarımı bile, kullandığı anahtar t
 
 ### PRNG vs. CSPRNG
 
+![XOR İşlemi ve Bit Düzeyinde Rastgelelik Dağılımı](./0_NDdy7s_T_pc-PWlx.webp)
+
 * **PRNG (Sözde Rastgele Sayı Üreteci):** Matematiksel bir başlangıç tohumu (*seed*) alarak deterministik bir dizi sayı üretir (örneğin *Linear Congruential Generator* veya Python'ın varsayılan *Mersenne Twister / `random`* modülü). Simülasyonlar ve istatistik için hızlıdır; ancak **kriptografik olarak güvenli değildir**. Çıktının belirli bir kısmı gözlemlendiğinde tüm iç durum (*internal state*) rekonstrükte edilebilir.
 * **CSPRNG (Kriptografik Güvenli PRNG):** Bir sonraki bitin tahmin edilemezliği testini (*Next-Bit Test*) geçen ve geçmiş durumunun ele geçirilmesi halinde önceki çıktıların hesaplanamaz olduğu (*State Compromise Extension / Forward Secrecy*) üreteçlerdir.
 
@@ -98,9 +100,9 @@ func main() {
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **Tarihsel Felaket: Debian OpenSSL Zafiyeti (CVE-2008-0166)**
-> 2008 yılında bir Debian geliştiricisi, Valgrind bellek uyarılarını susturmak için OpenSSL'deki entropi toplayıcı döngüyü kaldırdı. Bunun sonucunda anahtar üretimindeki tek değişken işletim sisteminin o anki işlem numarası (PID) oldu ($0$ ile $32767$ arası). 
-> Dünya çapında üretilen milyonlarca SSH ve SSL anahtarının uzayı sadece 32.768 ihtimale düştü ve saldırganlar birkaç saniye içinde tüm açık anahtarların gizli karşılıklarını brute-force ile deşifre etti.
-> **Kural:** Asla kendi rastgelelik fonksiyonunuzu yazmayın, `math/rand` (Go) veya `random` (Python) gibi kütüphaneleri güvenlik anahtarlarında asla kullanmayın!
+:::danger[Tarihsel Felaket: Debian OpenSSL Zafiyeti (CVE-2008-0166)]
+2008 yılında bir Debian geliştiricisi, Valgrind bellek uyarılarını susturmak için OpenSSL'deki entropi toplayıcı döngüyü kaldırdı. Bunun sonucunda anahtar üretimindeki tek değişken işletim sisteminin o anki işlem numarası (PID) oldu ($0$ ile $32767$ arası). 
+Dünya çapında üretilen milyonlarca SSH ve SSL anahtarının uzayı sadece 32.768 ihtimale düştü ve saldırganlar birkaç saniye içinde tüm açık anahtarların gizli karşılıklarını brute-force ile deşifre etti.
+**Kural:** Asla kendi rastgelelik fonksiyonunuzu yazmayın, `math/rand` (Go) veya `random` (Python) gibi kütüphaneleri güvenlik anahtarlarında asla kullanmayın!
+:::
 

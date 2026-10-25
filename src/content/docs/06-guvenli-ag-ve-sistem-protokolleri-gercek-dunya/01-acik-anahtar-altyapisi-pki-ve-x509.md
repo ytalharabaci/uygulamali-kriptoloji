@@ -9,6 +9,8 @@ description: "Açık Anahtar Altyapısı (PKI), X.509 v3 sertifikaları, Güven 
 
 ## 1. Teorik Sezgi & Matematik
 
+![Kriptografik Güvenlik Protokolleri ve PKI Mimarisi](./kriptoloji-protokoller.webp)
+
 PKI, açık anahtarlar ile bu anahtarların sahibi olan tüzel kişilikler (domain adları, kurumlar) arasındaki bağı güvenilir bir üçüncü taraf (**Sertifika Otoritesi - CA**) aracılığıyla kriptografik olarak mühürler.
 
 ### Güven Zinciri (Chain of Trust)
@@ -72,8 +74,8 @@ openssl verify -CAfile rootCA.crt server.crt
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **Sertifika Sabitleme (Certificate Pinning) Tehlikesi**
-> Geçmişte mobil uygulamalar MitM saldırılarını önlemek için sunucunun tam sertifikasını uygulama içine gömerdi (*Certificate Pinning*). Ancak sunucu sertifikası yenilendiğinde veya anahtar ifşa olduğunda güncellenemeyen mobil uygulamalar tamamen erişilemez hale gelmiştir. 
-> Modern standart; sertifikanın kendisini değil, Kök/Ara CA açık anahtar özetini sabitlemek (**HPKP yerine CT log takibi ve CAA kayıtları**) kullanmaktır.
+:::danger[Sertifika Sabitleme (Certificate Pinning) Tehlikesi]
+Geçmişte mobil uygulamalar MitM saldırılarını önlemek için sunucunun tam sertifikasını uygulama içine gömerdi (*Certificate Pinning*). Ancak sunucu sertifikası yenilendiğinde veya anahtar ifşa olduğunda güncellenemeyen mobil uygulamalar tamamen erişilemez hale gelmiştir. 
+Modern standart; sertifikanın kendisini değil, Kök/Ara CA açık anahtar özetini sabitlemek (**HPKP yerine CT log takibi ve CAA kayıtları**) kullanmaktır.
+:::
 

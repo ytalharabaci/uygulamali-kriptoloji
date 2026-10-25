@@ -40,6 +40,8 @@ flowchart TD
 
 ### 4 Ana Tur Dönüşümü
 
+![AES Durum Matrisi ve 4 Temel Tur Dönüşümü](./0_QSpz_OkltFg8Ljh_.webp)
+
 1. **SubBytes (İkame):** Durum matrisindeki her bayt, $GF(2^8)$ içinde çarpımsal tersi alınıp $\mathbb{F}_2$ üzerinde bir afin dönüşümden geçirilerek S-Box tablosundaki karşılığıyla değiştirilir. Diferansiyel ve lineer kriptanalize karşı maksimum direnç sağlar.
 2. **ShiftRows (Satır Kaydırma):** Matrisin 0. satırı sabit kalır; 1. satır 1 bayt, 2. satır 2 bayt, 3. satır 3 bayt sola dairesel ötelenir.
 3. **MixColumns (Sütun Karıştırma):** Her sütun, $GF(2^8)$ üzerinde sabit bir MDS matrisi ile çarpılır. Tek bir bayttaki değişimi sonraki turda 4 bayta birden yayar.
@@ -90,7 +92,7 @@ assert mul2 == 0xAE and mul3 == 0xF9
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!NOTE]
-> **Neden Son Turda MixColumns Yoktur?**
-> Deşifreleme işleminin şifreleme algoritmasıyla tamamen aynı mimari yapıda (*Equivalent Inverse Cipher*) yürütülebilmesi için AES tasarımcıları son turdaki MixColumns adımını kasten çıkarmıştır. Bu sayede donanım tasarımcıları aynı mantık kapılarını hem şifreleme hem de deşifreleme için minimum silikon alanıyla kullanabilmektedir.
+:::note[Neden Son Turda MixColumns Yoktur?]
+Deşifreleme işleminin şifreleme algoritmasıyla tamamen aynı mimari yapıda (*Equivalent Inverse Cipher*) yürütülebilmesi için AES tasarımcıları son turdaki MixColumns adımını kasten çıkarmıştır. Bu sayede donanım tasarımcıları aynı mantık kapılarını hem şifreleme hem de deşifreleme için minimum silikon alanıyla kullanabilmektedir.
+:::
 

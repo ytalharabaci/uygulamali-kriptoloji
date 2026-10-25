@@ -9,16 +9,22 @@ Blok şifreleyiciler (*Block Ciphers*), açık metni sabit uzunluktaki bloklara 
 
 ## 1. Teorik Sezgi & Matematik
 
+![Blok Şifreleme Prensibi ve Blok Bölümlemesi](./0_PgkgI4ShvSM2IppP.webp)
+
 Modern blok şifreleyiciler Claude Shannon'ın ortaya koyduğu iki temel ilkeye dayanır:
 * **Karışıklık (Confusion):** Şifreli metin ile anahtar arasındaki ilişkiyi olabildiğince karmaşık ve doğrusal olmayan hale getirmek (S-Box yapıları).
 * **Yayılma (Diffusion):** Açık metindeki tek bir bitin değişiminin şifreli metindeki tüm bitlerin yaklaşık yarısını değiştirmesini sağlamak (Çığ Etkisi - *Avalanche Effect*).
 
 ### 1. Feistel Ağı (DES / 3DES Mimarisi)
 
+![DES 64-bit Blok ve 56-bit Anahtar Anatomisi](./0_jNDsQQQOcDvB7E2i.webp)
+
 Horst Feistel tarafından IBM'de geliştirilen bu yapıda blok iki eşit yarıya bölünür ($L$ ve $R$). $r$ tur boyunca şu dönüşüm uygulanır:
 
 $$L_i = R_{i-1}$$
 $$R_i = L_{i-1} \oplus F(R_{i-1}, K_i)$$
+
+![DES Feistel Turu ve F-Fonksiyonu İç Yapısı](./0_fc-FSeFntoNvcQsj.webp)
 
 **Feistel Ağının Zarif Avantajı:** 
 Tur fonksiyonu olan $F$'in matematiksel olarak tersinir (*invertible*) olması gerekmez! Deşifre işlemi için aynı devre kullanılır; sadece alt anahtarlar ($K_r, \dots, K_1$) tersten beslenir.
@@ -96,8 +102,8 @@ assert plaintext_block == recovered_block
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **Sweet32 Zafiyeti (CVE-2016-2183): 64-bit Blok Boyutunun Sonu**
-> Doğum Günü Paradoksu gereği, $n$-bit blok boyutuna sahip bir şifreleyicide yaklaşık $2^{n/2}$ blok şifrelendikten sonra iki farklı açık metin bloğunun aynı şifreli bloğu üretme (çarpışma) olasılığı %50'ye ulaşır. 
-> DES ve Blowfish gibi 64-bit blok kullanan sistemlerde $2^{32}$ blok ($\approx 32\text{ GB}$) veri aktarıldığında çarpışmalar oluşur ve oturum çerezleri ele geçirilebilir. Bu nedenle **modern standart blok boyutu en az 128 bit (AES)** olmak zorundadır.
+:::danger[Sweet32 Zafiyeti (CVE-2016-2183): 64-bit Blok Boyutunun Sonu]
+Doğum Günü Paradoksu gereği, $n$-bit blok boyutuna sahip bir şifreleyicide yaklaşık $2^{n/2}$ blok şifrelendikten sonra iki farklı açık metin bloğunun aynı şifreli bloğu üretme (çarpışma) olasılığı %50'ye ulaşır. 
+DES ve Blowfish gibi 64-bit blok kullanan sistemlerde $2^{32}$ blok ($\approx 32\text{ GB}$) veri aktarıldığında çarpışmalar oluşur ve oturum çerezleri ele geçirilebilir. Bu nedenle **modern standart blok boyutu en az 128 bit (AES)** olmak zorundadır.
+:::
 

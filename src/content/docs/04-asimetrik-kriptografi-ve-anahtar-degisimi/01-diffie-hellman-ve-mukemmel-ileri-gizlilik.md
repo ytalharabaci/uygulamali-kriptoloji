@@ -9,9 +9,13 @@ description: "Diffie-Hellman anahtar değişimi, ayrık logaritma matematiği, M
 
 ## 1. Teorik Sezgi & Matematik
 
+![Güvensiz Ağda Anahtar Dağıtım Protokolü Prensibi](./0_TG166uwZDCXkgCtb.webp)
+
 Diffie-Hellman, bir şifreleme algoritması değil; bir **Anahtar Değişim Protokolüdür**.
 
 ### Protokol Adımları
+
+![Diffie-Hellman Anahtar Değişimi ve Matematiksel Mantık](./1_ILSONeBau6S2Vidq8GyOtA.webp)
 
 1. **Açık Parametreler:** Alice ve Bob herkesin görebileceği büyük bir $p$ asalı ve bir $g$ üreteci (*generator*) seçer ($g < p$).
 2. **Gizli Değerler:**
@@ -96,8 +100,8 @@ print("[✓] Diffie-Hellman Ortak Anahtarı Başarıyla Eşleşti!")
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!WARNING]
-> **Logjam Saldırısı (CVE-2015-4000): Zayıf Grup Parametreleri**
-> 2015 yılında keşfedilen Logjam saldırısında, binlerce web ve VPN sunucusunun aynı standart 1024-bitlik Diffie-Hellman asalını ($p$) paylaştığı ortaya çıkmıştır. Saldırganlar (özellikle devlet destekli aktörler) bu tek asal için aylar süren bir ön hesaplama (*precomputation*) yaparak, bu asalı kullanan tüm oturumları dakikalar içinde deşifre etmiştir.
-> **Kural:** Klasik DH için en az **2048-bit veya 3072-bit** asallar kullanılmalı ya da standart olarak **Eliptik Eğri Diffie-Hellman (X25519)** mimarisine geçilmelidir.
+:::caution[Logjam Saldırısı (CVE-2015-4000): Zayıf Grup Parametreleri]
+2015 yılında keşfedilen Logjam saldırısında, binlerce web ve VPN sunucusunun aynı standart 1024-bitlik Diffie-Hellman asalını ($p$) paylaştığı ortaya çıkmıştır. Saldırganlar (özellikle devlet destekli aktörler) bu tek asal için aylar süren bir ön hesaplama (*precomputation*) yaparak, bu asalı kullanan tüm oturumları dakikalar içinde deşifre etmiştir.
+**Kural:** Klasik DH için en az **2048-bit veya 3072-bit** asallar kullanılmalı ya da standart olarak **Eliptik Eğri Diffie-Hellman (X25519)** mimarisine geçilmelidir.
+:::
 

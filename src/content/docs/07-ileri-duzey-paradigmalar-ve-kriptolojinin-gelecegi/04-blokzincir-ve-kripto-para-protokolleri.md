@@ -9,7 +9,11 @@ description: "Kriptografik bileşenlerin zirvesi: İş İspatı (PoW), BIP-32/39
 
 ## 1. Teorik Sezgi & Matematik
 
+![Dağıtık Defter ve P2P Konsensüs Ağı Mimarisi](./0__mqEk43FYCnMOB8k.webp)
+
 ### 1. İş İspatı (Proof of Work - PoW)
+
+![Blok Başlığı ve Kriptografik Hash Bağlantı Mekanizması](./0_8FN6t57s1kOFav3O.webp)
 
 Merkezi bir otorite (banka) olmadan ağın durumunda anlaşabilmek için madenciler belirli bir zorluk derecesini (*Target*) sağlayan bir `Nonce` sayısını aramak zorundadır:
 
@@ -36,6 +40,8 @@ flowchart TD
 ---
 
 ## 2. Gerçek Hayat Mimarisi: UTXO Modeli ve Çift Harcama
+
+![Modern Kriptografik Protokollerin Entegrasyon Alanları](./0_r5VtfCsKzSlSziWt.webp)
 
 Klasik bankacılıkta hesaplar *"bakiye"* mantığıyla çalışırken; Bitcoin **UTXO (*Unspent Transaction Output - Harcanmamış İşlem Çıktısı*)** modelini kullanır:
 * Her işlem önceki bir işlemin çıktısını tüketir ve yeni alıcının açık anahtar script'ine kilitlenen yeni çıktılar üretir.
@@ -98,8 +104,8 @@ print(f"    Yeni Hash   : {block_1.hash}")
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **51% Saldırısı ve Kuantum Tehdidi**
-> * **%51 Saldırısı:** Ağdaki madencilik işlem gücünün yarısından fazlasını ele geçiren bir aktör, blokları gizlice geriden kazıp daha uzun bir zincir yayınlayarak kendi yaptığı ödemeleri geri alabilir (*Reorganize / Double-spend*).
-> * **Kuantum Tehdidi:** Blokzincir adresleri ilk para transferi yapılana kadar sadece açık anahtarın özetini (SHA-256 + RIPEMD-160) saklar ve kuantum bilgisayarlara karşı güvendedir. Ancak adresten bir kez harcama yapıldığında açık anahtar ağa yayınlanır ve Shor algoritması ile gizli anahtarın kırılma riski doğar. Bu nedenle Bitcoin topluluğu **Kuantum Sonrası Taproot / Lamport imzalarına** geçiş hazırlığı yapmaktadır.
+:::danger[51% Saldırısı ve Kuantum Tehdidi]
+* **%51 Saldırısı:** Ağdaki madencilik işlem gücünün yarısından fazlasını ele geçiren bir aktör, blokları gizlice geriden kazıp daha uzun bir zincir yayınlayarak kendi yaptığı ödemeleri geri alabilir (*Reorganize / Double-spend*).
+* **Kuantum Tehdidi:** Blokzincir adresleri ilk para transferi yapılana kadar sadece açık anahtarın özetini (SHA-256 + RIPEMD-160) saklar ve kuantum bilgisayarlara karşı güvendedir. Ancak adresten bir kez harcama yapıldığında açık anahtar ağa yayınlanır ve Shor algoritması ile gizli anahtarın kırılma riski doğar. Bu nedenle Bitcoin topluluğu **Kuantum Sonrası Taproot / Lamport imzalarına** geçiş hazırlığı yapmaktadır.
+:::
 

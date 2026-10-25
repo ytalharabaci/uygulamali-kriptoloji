@@ -128,8 +128,8 @@ func main() {
 
 ## 3. Güvenlik & Kriptanaliz Notu
 
-> [!IMPORTANT]
-> **Ortak Sırrı Asla Doğrudan Simetrik Anahtar Olarak Kullanmayın**
-> Diffie-Hellman veya ECDH ile elde edilen ham ortak sır ($g^{ab}$ veya $k \cdot P$), kriptografik özetler gibi bit düzeyinde üniform (eşit) rastgele bir dağılıma sahip değildir; cebirsel bir grup yapısının kısıtlamalarını taşır. 
-> Bu ham değeri doğrudan AES anahtarı olarak kullanmak sisteme zafiyet sokar. Doğru pratik, ham sırrı daima **HKDF (RFC 5869)** gibi bir Kriptografik Anahtar Türetme Fonksiyonundan geçirerek homojen ve bağımsız oturum anahtarları üretmektir.
+:::caution[Ortak Sırrı Asla Doğrudan Simetrik Anahtar Olarak Kullanmayın]
+Diffie-Hellman veya ECDH ile elde edilen ham ortak sır ($g^{ab}$ veya $k \cdot P$), kriptografik özetler gibi bit düzeyinde üniform (eşit) rastgele bir dağılıma sahip değildir; cebirsel bir grup yapısının kısıtlamalarını taşır. 
+Bu ham değeri doğrudan AES anahtarı olarak kullanmak sisteme zafiyet sokar. Doğru pratik, ham sırrı daima **HKDF (RFC 5869)** gibi bir Kriptografik Anahtar Türetme Fonksiyonundan geçirerek homojen ve bağımsız oturum anahtarları üretmektir.
+:::
 

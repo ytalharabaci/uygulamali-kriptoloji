@@ -9,6 +9,8 @@ Kriptografi, sonsuz reel sayılar kümesinde değil; sınırlı, döngüsel ve c
 
 ## 1. Teorik Sezgi & Matematik
 
+![Sayısal Alfabe ve Modüler Eşleme Tablosu](./0_0ATssVLmJQigP6cg.webp)
+
 ### Modüler Denklik
 
 İki tam sayı $a$ ve $b$, pozitif bir tam sayı olan $n$'ye bölündüklerinde aynı kalanı veriyorsa, bu sayılar $n$ modülüne göre birbirine denktir:
@@ -127,8 +129,8 @@ func main() {
 
 ## 4. Güvenlik & Kriptanaliz Notu
 
-> [!CAUTION]
-> **Modüler Üs Almada Zamanlama Yan Kanalı (Timing Side-Channel)**
-> Standart *Square-and-Multiply* algoritmasında üssün her biti tek tek taranır. Eğer bit `1` ise hem kare alma (*square*) hem de çarpma (*multiply*) yapılır; bit `0` ise sadece kare alınır. Çarpma ek işlem süresi gerektirdiğinden, işlemci çevrimlerini izleyen bir saldırgan yürütme süresinden gizli anahtarın ($d$) bit dizilimini çıkarabilir. 
-> Güvenli kriptografik kütüphaneler bu nedenle **Sabit Zamanlı (Constant-Time)** algoritma sürümlerini (örneğin *Montgomery Ladder*) kullanır.
+:::danger[Modüler Üs Almada Zamanlama Yan Kanalı (Timing Side-Channel)]
+Standart *Square-and-Multiply* algoritmasında üssün her biti tek tek taranır. Eğer bit `1` ise hem kare alma (*square*) hem de çarpma (*multiply*) yapılır; bit `0` ise sadece kare alınır. Çarpma ek işlem süresi gerektirdiğinden, işlemci çevrimlerini izleyen bir saldırgan yürütme süresinden gizli anahtarın ($d$) bit dizilimini çıkarabilir. 
+Güvenli kriptografik kütüphaneler bu nedenle **Sabit Zamanlı (Constant-Time)** algoritma sürümlerini (örneğin *Montgomery Ladder*) kullanır.
+:::
 
